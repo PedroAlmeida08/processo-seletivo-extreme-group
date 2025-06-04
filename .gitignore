@@ -1,1 +1,22 @@
+# Dados
 data/
+
+# Virtual environment
+venv/
+.venv/
+env/
+*venv*/
+venv_sigtap/
+
+# Python bytecode
+*.pyc
+__pycache__/
+
+# IDEs
+.idea/
+.vscode/
+
+# Dados temporários ou logs
+*.log
+*.sqlite3
+*.db
