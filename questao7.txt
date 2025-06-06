@@ -1,0 +1,16 @@
+Dado que um atendimento médico pode ter vários exames solicitados,
+como você modelaria essas duas tabelas no banco de dados de
+staging?
+
+Como um atendimento médico pode ter vários exames solicitados, a relação entre
+as tabelas é 1 atendimento médico para N exames solicitados (1 : N)
+
+No caso de tabelas onde a relação é 1 para N (1 para muitos), o procedimento
+é o seguinte:
+
+Suponha que existam as tabelas stg_atendimento_medico e stg_exame_solicitado
+na base de dados.
+
+Dessa forma, é necessário adicionar a chave primária (ou chaves primárias, 
+em caso de chave primária composta), da tabela stg_atendimento_medico
+como uma chave estrangeira na tabela stg_exame_solicitado.
