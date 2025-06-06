@@ -1,3 +1,6 @@
+# Esse código lê dados do SIGTAP e armazena o resultado em uma tabela de banco de dados,
+# utilizando arquivos de layout para modelar essas tabelas.
+
 import os
 import csv
 import pandas as pd
