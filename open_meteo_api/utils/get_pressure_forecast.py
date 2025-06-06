@@ -5,7 +5,6 @@ from retry_requests import retry
 
 def get_pressure_forecast_data():
     # Setup the Open-Meteo API client with cache and retry on error
-    # O cache ajuda a evitar múltiplas chamadas à API para os mesmos dados em um curto período
     cache_session = requests_cache.CachedSession('.cache', expire_after=3600)
     retry_session = retry(cache_session, retries=5, backoff_factor=0.2)
     openmeteo = openmeteo_requests.Client(session=retry_session)
@@ -27,11 +26,7 @@ def get_pressure_forecast_data():
         
         # Process first location. Add a for-loop for multiple locations or weather models
         response = responses[0]
-        print(f"Coordinates {response.Latitude()}°N {response.Longitude()}°E")
-        print(f"Elevation {response.Elevation()} m asl")
-        print(f"Timezone {response.Timezone()}{response.TimezoneAbbreviation()}")
-        print(f"Timezone difference to GMT+0 {response.UtcOffsetSeconds()} s")
-
+    
         # Process hourly data. The order of variables needs to be the same as requested.
         hourly = response.Hourly()
         hourly_surface_pressure = hourly.Variables(0).ValuesAsNumpy()
