@@ -1,7 +1,7 @@
 import mysql.connector
 
 # --- Função para popular tabelas com base nos arquivos lidos ---
-def import_fixed_width_file(filepath, conn, table_name, columns_info):
+def import_data(filepath, conn, table_name, columns_info):
     print(f"\nImportando arquivo: {filepath} para {table_name}")
 
     cursor = conn.cursor()

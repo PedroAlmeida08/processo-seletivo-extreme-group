@@ -3,9 +3,9 @@
 
 import os
 from utils.get_db_connection import get_db_connection
-from utils.parse_layout_file import parse_layout_file
+from utils.read_layout_file import read_layout_file
 from utils.create_table_from_layout import create_table_from_layout
-from utils.import_fixed_width_file import import_fixed_width_file
+from utils.import_data import import_data
 
 # --- Configurações dos Arquivos e Tabelas ---
 DADOS_FOLDER = './data/sigtap-simplificado'
@@ -57,13 +57,13 @@ def main():
                     print(f"Aviso: Arquivo de dados '{data_filepath}' não encontrado. Pulando '{data_filename}'.")
                     continue
 
-                columns_info = parse_layout_file(layout_filepath)
+                columns_info = read_layout_file(layout_filepath)
                 if columns_info:
                     # CREATE_TABLE
                     create_table_from_layout(cursor, table_name, columns_info)
                     conn.commit()
                     # INSERT_INTO
-                    import_fixed_width_file(data_filepath, conn, table_name, columns_info)
+                    import_data(data_filepath, conn, table_name, columns_info)
                 else:
                     print(f"Pulando processamento para '{data_filename}' devido a erro na análise do layout ou layout vazio.")
             

@@ -1,7 +1,7 @@
 import csv
 
 # --- Função para ler o arquivo de layout ---
-def parse_layout_file(layout_filepath):
+def read_layout_file(layout_filepath):
     columns_info = []
     try:
         # newline='' para evitar problemas com quebras de linha em diferentes OS
