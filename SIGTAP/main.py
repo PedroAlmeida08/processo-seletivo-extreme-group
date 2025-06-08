@@ -3,7 +3,6 @@
 
 import os
 import csv
-import pandas as pd
 import mysql.connector
 from datetime import datetime
 
