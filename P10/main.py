@@ -1,4 +1,4 @@
-from plot_apointments_per_day import plot_appointments_per_day
+from utils.plot_apointments_per_day import plot_appointments_per_day
 
 if __name__ == "__main__":
     # --- Exemplos ---

@@ -1,4 +1,4 @@
-from verifica_prescricao import verifica_prescricao
+from utils.verifica_prescricao import verifica_prescricao
 
 if __name__ == "__main__":
     print(verifica_prescricao('a', 'b'))

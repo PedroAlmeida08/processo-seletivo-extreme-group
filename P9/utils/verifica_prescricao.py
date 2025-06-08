@@ -1,4 +1,4 @@
-from contar_prescricoes import contar_prescricoes
+from utils.contar_prescricoes import contar_prescricoes
 
 def verifica_prescricao(prescricao: str, estoque: str):
     

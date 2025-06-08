@@ -14,10 +14,10 @@ def create_table_from_layout(cursor, table_name, columns_info):
     ]
 
     create_table_sql = f"""
-    CREATE TABLE IF NOT EXISTS {table_name} (
-        {', '.join(table_creation_query)}
-    );
-    """
+        CREATE TABLE IF NOT EXISTS {table_name} (
+            {', '.join(table_creation_query)}
+        );
+        """
     try:
         # cursor atua como intermediário entre o Python e o banco de dados
         cursor.execute(create_table_sql)
